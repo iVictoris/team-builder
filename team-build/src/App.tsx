@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./App.css";
 import Form from "./components/Form";
+import User from './components/User';
 
 interface teamMember {
   id: number,
@@ -26,11 +27,7 @@ const App: React.FC = () => {
     team.length > 0
       ? team.map((member: teamMember) => {
           return (
-            <div key={member.id}>
-              <div className="name">{member.name}</div>
-              <div className="name">{member.email}</div>
-              <div className="name">{member.title}</div>
-            </div>
+            <User name={member.name} email={member.email} title={member.title} key={member.id} />
           );
         })
       : null;
